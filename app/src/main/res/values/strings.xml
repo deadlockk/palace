@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Gung</string>
+    <string name="address1">서울특별시 종로구 세종로 사직로 161</string>
+    <string name="address2">서울특별시 종로구 와룡동 율곡로 99</string>
+    <string name="address3">서울특별시 종로구 와룡동 창경궁로 185</string>
+    <string name="address4">서울특별시 중구 정동 세종대로 99</string>
+    <string name="address5">서울특별시 종로구 사직동 새문안로 45</string>
+
+</resources>

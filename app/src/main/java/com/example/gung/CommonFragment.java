@@ -4,10 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,15 +40,11 @@ public class CommonFragment extends Fragment implements DragLayout.GotoDetailLis
     @Override
     public void gotoDetail() {
         Activity activity = (Activity) getContext();
-        ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(activity,
-                new Pair(imageView, DetailActivity.IMAGE_TRANSITION_NAME),
-                new Pair(gps, DetailActivity.GPS_NAME),
-                new Pair(palace_address, DetailActivity.ADDRESS_PALACE),
-                new Pair(palace_name, DetailActivity.NAME_PALACE)
-        );
         Intent intent = new Intent(activity, DetailActivity.class);
         intent.putExtra(DetailActivity.EXTRA_IMAGE_URL, imageUrl);
-        ActivityCompat.startActivity(activity, intent, options.toBundle());
+        intent.putExtra(DetailActivity.NAME_PALACE,names);
+
+        startActivity(intent);
     }
 
     public void bindData(String imageUrl) {
